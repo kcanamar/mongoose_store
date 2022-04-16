@@ -19,7 +19,6 @@ app.use(morgan('tiny'));
 ///////////////////////
 // Declare Routes and Routers 
 ///////////////////////
-// INDUCES - Index, New, Delete, Update, Create, Edit, Show
 app.use("/store", storeRouter);
 ///////////////////////////
 // Server Listener
