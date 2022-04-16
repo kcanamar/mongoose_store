@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 // Declare Middleware
 //////////////////////
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use("/static", express.static("public"));
 app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 ///////////////////////

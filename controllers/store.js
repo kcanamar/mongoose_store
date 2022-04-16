@@ -11,8 +11,9 @@ const storeRouter = express.Router();
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show, Seed
 // Index Route
 storeRouter.get("/", (req, res) => {
-    console.log("The store is open");
-    res.send("Welcome to the store");
+    Product.find({}, (err, allProducts) => {
+        res.render('index.ejs', {products: allProducts})
+    })
 });
 // New Route
 storeRouter.get("/new", (req, res) => {
