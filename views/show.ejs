@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%- include('./partials/head.ejs') %>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,19 @@
         <img src="<%= product.img %>" alt=""> <br>
         <p> <%= product.description %></p> <br>
         Price: $<%= product.price %> <br>
-        <h3> <%= product.qty  %> Remaining</h3> <br>
-        <button>BUY</button> <br>
+        <h3> <%= (product.qty >= 0) ? product.qty : "OUT OF STOCK" %> Remaining</h3> <br>
+        <!--  The form bellow need to be a PUT request to the product being displayed and minipulate the product quantity-->
+         <form action="" method="post">
+            <!-- Upon submit there should be a redirection to the cart page -->
+            <input type="submit" value="BUY">
+        </form> <br> 
         <a href="">Edit <%= product.name %></a>
     </div> <br>
     <form action="" method="post">
         <input type="submit" value="DELETE <%= product.name%>">
     </form>
 </body>
+<script>
+    
+</script>
 </html>
