@@ -50,8 +50,9 @@ storeRouter.get("/:id/edit", (req, res) => {
 });
 // Show Route
 storeRouter.get("/:id", (req, res) => {
-    console.log("I have chosen" + req.params.id);
-    res.send("Chosen One!... I'm Coming!" + req.params.id);
+    Product.findById(req.params.id, (err, foundProduct) => {
+        res.render('show.ejs', {product: foundProduct});
+    });
 });
 ///////////////////////////
 // Export
