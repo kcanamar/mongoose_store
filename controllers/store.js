@@ -36,8 +36,10 @@ storeRouter.delete("/:id", (req, res) => {
 });
 // Update Route
 storeRouter.put('/:id', (req, res) => {
-    console.log("Upgrade Complete..." + req.params.id);
-    res.send("Upgrade Merge Complete..." + req.params.id); 
+    Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
+        if (err) console.log(err);
+        res.redirect(`/store/${req.params.id}`)
+    })
 });
 // Create Route
 storeRouter.post("/", (req, res) => {
@@ -46,8 +48,9 @@ storeRouter.post("/", (req, res) => {
 });
 // Edit Route
 storeRouter.get("/:id/edit", (req, res) => {
-    console.log("Edit this one" + req.params.id);
-    res.send("Okay who is getting a new hair cut?" + req.params.id);
+    Product.findById(req.params.id, (err, product) => {
+        res.render("edit.ejs", {product});
+    });
 });
 // Show Route
 storeRouter.get("/:id", (req, res) => {
