@@ -24,8 +24,8 @@
         </form> <br> 
         <a href="">Edit <%= product.name %></a>
     </div> <br>
-    <form action="" method="post">
-        <input type="submit" value="DELETE <%= product.name%>">
+    <form action="/store/<%=product._id%>?_method=DELETE" method="post">
+        <input type="submit" value="DELETE <%= product.name %>">
     </form>
 </body>
 <script>

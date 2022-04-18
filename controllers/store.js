@@ -13,7 +13,7 @@ const storeRouter = express.Router();
 storeRouter.get("/", (req, res) => {
     Product.find({}, (err, allProducts) => {
         res.render('index.ejs', {products: allProducts})
-    })
+    });
 });
 // New Route
 storeRouter.get("/new", (req, res) => {
@@ -24,14 +24,15 @@ storeRouter.get("/new", (req, res) => {
 storeRouter.get("/seed", (req, res) => {
     Product.deleteMany({}, (err, deletedProducts) => {
         Product.create(productsSeed, (err, data) => {
-            res.send(productsSeed);
+            res.redirect("/store");
         });
     });
 });
 // Delete Route
 storeRouter.delete("/:id", (req, res) => {
-    console.log("Target Neutralized..." + req.params.id);
-    res.send("Deleted...." + req.params.id);
+    Product.findByIdAndDelete(req.params.id, (err, deletedProduct) => {
+        res.redirect("/store");
+    });
 });
 // Update Route
 storeRouter.put('/:id', (req, res) => {
