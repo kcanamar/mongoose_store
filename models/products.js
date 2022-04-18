@@ -5,11 +5,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const productSchema = new Schema({
-    name: String || "N/A",
+    name: {type: String, required: true,},
     description: String || "N/A",
     img: String || "/static/no-image.png",
-    price: Number || 0,
-    qty: Number || 0
+    price: Number,
+    qty: Number
 });
 ///////////////////////////
 // Export
