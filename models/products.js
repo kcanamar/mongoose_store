@@ -7,7 +7,7 @@ const Schema = mongoose.Schema
 const productSchema = new Schema({
     name: {type: String, required: true,},
     description: String || "N/A",
-    img: String || "/static/no-image.png",
+    img: String,
     price: Number,
     qty: Number
 });

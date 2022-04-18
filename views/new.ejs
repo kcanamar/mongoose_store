@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+</head>
+<body>
+    <h1>New Product</h1>
+    <form action="/store" method="post">
+        <label for="name">Name: <input type="text" name="name" placeholder=""></label>
+        <label for="description">Description: <input type="text" name="description" placeholder="Brief Description..."></label>
+        <label for="img">Image Link: <input type="text" name="img" value="/static/no-image.png"></label>
+        <label for="price">Price: $<input type="number" name="price" placeholder=""></label>
+        <label for="qty">Quantity: <input type="text" name="qty" placeholder=""></label>
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>

@@ -12,13 +12,12 @@ const storeRouter = express.Router();
 // Index Route
 storeRouter.get("/", (req, res) => {
     Product.find({}, (err, allProducts) => {
-        res.render('index.ejs', {products: allProducts})
+        res.render('index.ejs', {products: allProducts});
     });
 });
 // New Route
 storeRouter.get("/new", (req, res) => {
-    console.log("A New Chllanger Approaches");
-    res.send("New LTO...");
+    res.render('new.ejs');
 });
 // Seed Route
 storeRouter.get("/seed", (req, res) => {
@@ -38,13 +37,20 @@ storeRouter.delete("/:id", (req, res) => {
 storeRouter.put('/:id', (req, res) => {
     Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {
         if (err) console.log(err);
-        res.redirect(`/store/${req.params.id}`)
-    })
+        res.redirect(`/store/${req.params.id}`);
+    });
 });
 // Create Route
 storeRouter.post("/", (req, res) => {
-    console.log("You Must Contruct Additional Pylons." + req.body.name);
-    res.send("Look its a baby" + req.body.name);
+    // check for img and register default
+    Product.create(req.body, (err, createdProduct) => {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.redirect("/store");
+        };
+    });
 });
 // Edit Route
 storeRouter.get("/:id/edit", (req, res) => {
