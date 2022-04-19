@@ -1,0 +1,79 @@
+.index-body {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+.index-body .index-header {
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: grey;
+    font-size: xx-large;
+}
+.index-body .index-header .index-title {
+    letter-spacing: 4px;
+    text-decoration: underline;
+}
+.index-body .index-nav {
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.index-body .index-nav a:link, .index-body .index-nav a:visited {
+    width: 15em;
+    font-size: 18px;
+    background-color:black;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.index-body .index-nav a:hover, .index-body .index-nav a:active {
+    background-color: blueviolet;
+}
+.index-body .index-products {
+    display: flex;
+    margin-top: 3em;
+    align-items: baseline;
+    text-align: center;
+    width: 80%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.index-body .index-products .index-product {
+    width: 16em;
+    margin: auto;
+}
+.index-body .index-products .index-product .index-product-name {
+    margin: 0;
+}
+.index-body .index-products .index-product .index-product-name a:link, .index-body .index-products .index-product .index-product-name a:visited {
+    font-size: 24px;
+    letter-spacing: 2px;
+    background-color: rgba(51, 255, 0, 0.643);
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    border: 2.5px solid white;
+}
+.index-body .index-products .index-product .index-product-name a:hover, .index-body .index-products .index-product .index-product-name a:active {
+    background-color: rgb(0, 145, 255);
+}
+.index-body .index-products .index-product img {
+    border-radius: 15px;
+    height: 16em;
+    width: 16em;
+}
+.index-body .index-products .index-product .index-product-price {
+    letter-spacing: 1.5px;
+}

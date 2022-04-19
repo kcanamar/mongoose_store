@@ -42,7 +42,6 @@ storeRouter.put('/:id', (req, res) => {
 });
 // Create Route
 storeRouter.post("/", (req, res) => {
-    // check for img and register default
     Product.create(req.body, (err, createdProduct) => {
         if (err) {
             console.log(err);

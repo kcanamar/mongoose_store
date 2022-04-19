@@ -7,17 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
 </head>
-<body>
-    <h1>Products Index</h1>
-    <a href="/store/new"><button>Add New Product</button></a>
-    <ul>
-        <% products.forEach(product => { %>
-            <li>
-                <a href="/store/<%=product._id%>"><%= product.name %></a> <br>
-                <img src="<%= product.img %>" alt=""> <br>
-                Price: $<%= product.price %> <br>
-            </li>
-        <% }) %>
-    </ul>
+<body class="index-body">
+    <header class="index-header">
+        <h1 class="index-title">Products Index</h1>
+    </header>
+    <nav class="index-nav">
+        <a href="/store/new"><i class="fa-solid fa-square-plus"></i>  Add Product</a>
+        <a href=""><i class="fa-solid fa-cart-shopping"></i>  Cart</a>
+    </nav>
+    <div class="index-products">
+            <% products.forEach(product => { %>
+                <div class="index-product">
+                    <h3 class="index-product-name"><a href="/store/<%=product._id%>"><%= product.name %></a></h3> <br>
+                    <img src="<%= product.img %>" alt=""> <br>
+                    <h3 class="index-product-price">Price: $<%= product.price %></h3> <br>
+                </div>
+            <% }) %>
+    </div>
 </body>
 </html>
