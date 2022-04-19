@@ -1,4 +1,4 @@
-.index-body {
+.index-body, .show-body {
     display: flex;
     height: 80%;
     flex-direction: column;
@@ -18,14 +18,14 @@
     letter-spacing: 4px;
     text-decoration: underline;
 }
-.index-body .index-nav {
+.index-body .index-nav, .show-body .show-nav {
     padding: 5px;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     width: 80%;
 }
-.index-body .index-nav a:link, .index-body .index-nav a:visited {
+.index-body .index-nav a:link, .index-body .index-nav a:visited, .show-body .show-nav a:link, .show-body .show-nav a:visited {
     width: 15em;
     font-size: 18px;
     background-color:black;
@@ -35,7 +35,7 @@
     text-decoration: none;
     display: inline-block;
 }
-.index-body .index-nav a:hover, .index-body .index-nav a:active {
+.index-body .index-nav a:hover, .index-body .index-nav a:active, .show-body .show-nav a:hover, .show-body .show-nav a:active {
     background-color: blueviolet;
 }
 .index-body .index-products {
@@ -54,7 +54,7 @@
 .index-body .index-products .index-product .index-product-name {
     margin: 0;
 }
-.index-body .index-products .index-product .index-product-name a:link, .index-body .index-products .index-product .index-product-name a:visited {
+.index-body .index-products .index-product .index-product-name a:link, .index-body .index-products .index-product .index-product-name a:visited, .show-body .show-btns a:link, .show-body .show-btns a:visited, .show-body .show-btns input[type=submit] {
     font-size: 24px;
     letter-spacing: 2px;
     background-color: rgba(51, 255, 0, 0.643);
@@ -66,8 +66,11 @@
     border-radius: 15px;
     border: 2.5px solid white;
 }
-.index-body .index-products .index-product .index-product-name a:hover, .index-body .index-products .index-product .index-product-name a:active {
+.index-body .index-products .index-product .index-product-name a:hover, .index-body .index-products .index-product .index-product-name a:active, .show-body .show-btns a:hover, .show-body .show-btns a:active, .show-body .show-btns input[class=show-btn-buy] {
     background-color: rgb(0, 145, 255);
+}
+.show-body .show-btns input[class=show-btn-delete] {
+    background-color: red;
 }
 .index-body .index-products .index-product img {
     border-radius: 15px;
@@ -76,4 +79,55 @@
 }
 .index-body .index-products .index-product .index-product-price {
     letter-spacing: 1.5px;
+}
+.show-body .show-title {
+    font-size: 40px;
+    letter-spacing: 4px;
+    background-color: grey;
+    padding: 20px;
+    width: 20%;
+    text-align: center;
+    border-radius: 15px;
+    text-decoration: underline;
+}
+.show-body .product-info {
+    text-align: center;
+    font-size: x-large;
+    background-color: grey;
+    border-radius: 15px;
+    padding: 20px;
+    letter-spacing: 1px;
+    margin: auto;
+    width: 80%;
+}
+.show-body .product-info img {
+    border-radius: 15px;
+}
+.show-body .product-info .show-description, .show-body .product-info .show-description #text{
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.show-body .product-info .show-inventory {
+    font-size: 40px;
+    letter-spacing: 1.5px;
+}
+.out-of-stock {
+    color:red;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-shadow: 1px 1px black;
+}
+.show-body .show-btns {
+    width: 20%;
+    text-align: center;
+}
+.show-body .show-btns a, .show-body .show-btns form {
+    margin: 5px;
+    padding: 5px;
+}
+#no-buy {
+    display: none;
 }

@@ -60,7 +60,11 @@ storeRouter.get("/:id/edit", (req, res) => {
 // Show Route
 storeRouter.get("/:id", (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
-        res.render('show.ejs', {product: foundProduct});
+        res.render('show.ejs', {
+            product: foundProduct,
+            outOfStock: function () { if ( foundProduct.qty <= 0 ) return 'out-of-stock' },
+            hideBuy: function () { if ( foundProduct.qty <= 0) return 'no-buy'}
+        });
     });
 });
 ///////////////////////////

@@ -7,26 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Page</title>
 </head>
-<body>
-    <nav>
-        <a href="/store">Back to Main</a>
+<body class="show-body">
+    <nav class="show-nav">
+        <a href="/store"><i class="fa-solid fa-arrow-rotate-left"></i> Back to Main</a>
     </nav>
-    <h1><%= product.name %></h1> <br>
-    <div class="product-info">
-        <img src="<%= product.img %>" alt=""> <br>
-        <p> <%= product.description %></p> <br>
-        Price: $<%= product.price %> <br>
-        <h3> <%= (product.qty > 0) ? product.qty + " Remaining " : "OUT OF STOCK" %></h3> <br>
-        <!--  The form bellow need to be a PUT request to the product being displayed and minipulate the product quantity-->
-         <form action="" method="">
-            <!-- Upon submit there should be a redirection to the cart page -->
-            <input type="submit" value="BUY">
-        </form> <br> 
-        <a href="/store/<%=product._id%>/edit">Edit</a>
-    </div> <br>
-    <form action="/store/<%=product._id%>?_method=DELETE" method="post">
-        <input type="submit" value="DELETE">
-    </form>
+        <h1 class="show-title"><%= product.name %></h1> 
+        <div class="product-info">
+            <img src="<%= product.img %>" alt=""> 
+            <p class="show-description"> <%= product.description %></p> 
+            Price: $<%= product.price %> 
+            <h3 class="show-inventory <%=outOfStock()%>"> <%= (product.qty > 0) ? product.qty + " In Stock " : "OUT OF STOCK" %></h3> 
+        </div> 
+        <div class="show-btns">
+            <!--  The Buy form bellow needs to be a PUT request to the product being displayed and minipulate the product quantity-->
+            <form action="" method="">
+                <!-- Upon submit there should be a redirection to the cart page -->
+                <input id="<%=hideBuy()%>" class="show-btn-buy" type="submit" value="BUY">
+            </form>
+            <a href="/store/<%=product._id%>/edit"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+            <form action="/store/<%=product._id%>?_method=DELETE" method="post">
+                <input class="show-btn-delete" type="submit" value="DELETE">
+            </form>
+        </div>
 </body>
 <script>
     
