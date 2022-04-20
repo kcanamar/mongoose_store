@@ -8,6 +8,9 @@
     <title>Edit Page</title>
 </head>
 <body>
+    <nav class="edit-nav">
+        <a href="/store"><i class="fa-solid fa-arrow-rotate-left"></i> Back to Main</a>
+    </nav>
     <h1>Currently Updating <%= product.name %></h1>
     <form action="/store/<%=product._id%>?_method=PUT" method="post">
         <label for="name">Name: <input type="text" name="name" value="<%= product.name %>"></label>

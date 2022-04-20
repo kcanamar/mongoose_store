@@ -18,14 +18,14 @@
     letter-spacing: 4px;
     text-decoration: underline;
 }
-.index-body .index-nav, .show-body .show-nav {
+.index-body .index-nav, .show-body .show-nav, .edit-nav, .new-nav {
     padding: 5px;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     width: 80%;
 }
-.index-body .index-nav a:link, .index-body .index-nav a:visited, .show-body .show-nav a:link, .show-body .show-nav a:visited {
+.index-body .index-nav a:link, .index-body .index-nav a:visited, .show-body .show-nav a:link, .show-body .show-nav a:visited, .edit-nav a:link, .edit-nav a:visited, .new-nav a:link, .new-nav a:visited {
     width: 15em;
     font-size: 18px;
     background-color:black;
@@ -35,7 +35,7 @@
     text-decoration: none;
     display: inline-block;
 }
-.index-body .index-nav a:hover, .index-body .index-nav a:active, .show-body .show-nav a:hover, .show-body .show-nav a:active {
+.index-body .index-nav a:hover, .index-body .index-nav a:active, .show-body .show-nav a:hover, .show-body .show-nav a:active, .edit-nav a:hover, .edit-nav a:active, .new-nav a:hover, .new-nav a:active {
     background-color: blueviolet;
 }
 .index-body .index-products {
@@ -131,3 +131,4 @@
 #no-buy {
     display: none;
 }
+/* todo style new.ejs & edit.ejs */
