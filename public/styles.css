@@ -128,6 +128,9 @@
     margin: 5px;
     padding: 5px;
 }
+.show-body .show-btns form input {
+    margin: 5px;
+}
 #no-buy {
     display: none;
 }

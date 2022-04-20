@@ -33,6 +33,21 @@ storeRouter.delete("/:id", (req, res) => {
         res.redirect("/store");
     });
 });
+// Buy Route
+storeRouter.put('/buy/:id', (req, res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        let currentQty = foundProduct.qty
+        let buyQty = req.body.qty
+        if (currentQty - buyQty < 0 ) return res.send('You cant buy that many.')
+        let updatedQty = currentQty - buyQty
+        req.body.qty = updatedQty
+        Product.findByIdAndUpdate(req.params.id, req.body, (err, boughtProduct) => {
+            if (err) console.log(err);
+            res.redirect(`/store/${req.params.id}`);
+        });
+    })
+});
+
 // Update Route
 storeRouter.put('/:id', (req, res) => {
     Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedProduct) => {

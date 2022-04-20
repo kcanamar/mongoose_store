@@ -20,9 +20,12 @@
         </div> 
         <div class="show-btns">
             <!--  The Buy form bellow needs to be a PUT request to the product being displayed and minipulate the product quantity-->
-            <form action="" method="">
-                <!-- Upon submit there should be a redirection to the cart page -->
-                <input id="<%=hideBuy()%>" class="show-btn-buy" type="submit" value="BUY">
+            <form id="buy-form" action="/store/buy/<%=product._id%>?_method=PUT" method="post">
+                <fieldset id="<%=hideBuy()%>">
+                    <legend>How many would you like to buy?</legend>
+                    <input id="buy-qty" type="number" maxlength="4" size="4" name="qty" value="1"> <br>
+                    <input class="show-btn-buy" type="submit" value="BUY">
+                </fieldset> 
             </form>
             <a href="/store/<%=product._id%>/edit"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
             <form action="/store/<%=product._id%>?_method=DELETE" method="post">
