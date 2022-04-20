@@ -7,18 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Page</title>
 </head>
-<body>
+<body class="edit-new">
     <nav class="edit-nav">
         <a href="/store"><i class="fa-solid fa-arrow-rotate-left"></i> Back to Main</a>
     </nav>
-    <h1>Currently Updating <%= product.name %></h1>
-    <form action="/store/<%=product._id%>?_method=PUT" method="post">
-        <label for="name">Name: <input type="text" name="name" value="<%= product.name %>"></label>
-        <label for="description">Description: <input type="text" name="description" value="<%= product.description %>"></label>
-        <label for="img">Image Link: <input type="text" name="img" value="<%= product.img %>"></label>
-        <label for="price">Price: $<input type="number" name="price" value="<%= product.price %>"></label>
-        <label for="qty">Quantity: <input type="text" name="qty" value="<%= product.qty %>"></label>
-        <input type="submit" value="Update">
+    <h1 class="title">Currently Updating <%= product.name %></h1>
+    <form class="put-form" action="/store/<%= product._id %>?_method=PUT" method="post">
+        <label for="name">Name: <input type="text" name="name" value="<%= product.name %>"></label> <br>
+        <label for="description">Description: 
+            <textarea rows="5" cols="16" name="description" required><%= product.description %>
+            </textarea>
+        </label> <br>
+        <label for="img">Image Link: <input type="text" name="img" value="<%= product.img %>"></label> <br>
+        <label for="price">Price: $<input type="number" name="price" value="<%= product.price %>"></label> <br>
+        <label for="qty">Quantity: <input type="text" name="qty" value="<%= product.qty %>"></label> <br>
+        <input class="edit-new-btn" type="submit" value="Update">
     </form>
 </body>
 </html>

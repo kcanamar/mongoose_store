@@ -19,8 +19,8 @@
             <% products.forEach(product => { %>
                 <div class="index-product">
                     <h3 class="index-product-name"><a href="/store/<%=product._id%>"><%= product.name %></a></h3> <br>
-                    <img src="<%= product.img %>" alt=""> <br>
-                    <h3 class="index-product-price">Price: $<%= product.price %></h3> <br>
+                    <a href="/store/<%=product._id%>"><img src="<%= product.img %>"></a> <br>
+                    <br class="index-product-price">Price: $<%= product.price %> </br> <%= (product.qty > 0) ? product.qty + " In Stock " : "OUT OF STOCK" %></h3> 
                 </div>
             <% }) %>
     </div>

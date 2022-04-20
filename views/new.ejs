@@ -7,18 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Page</title>
 </head>
-<body>
+<body class="edit-new">
     <nav class="new-nav">
         <a href="/store"><i class="fa-solid fa-arrow-rotate-left"></i> Back to Main</a>
     </nav>
-    <h1>New Product</h1>
-    <form action="/store" method="post">
-        <label for="name">Name: <input type="text" name="name" placeholder=""></label>
-        <label for="description">Description: <input type="text" name="description" placeholder="Brief Description..."></label>
-        <label for="img">Image Link: <input type="text" name="img" value="/static/no-image.png"></label>
-        <label for="price">Price: $<input type="number" name="price" placeholder=""></label>
-        <label for="qty">Quantity: <input type="text" name="qty" placeholder=""></label>
-        <input type="submit" value="Create">
+    <h1 class="title"> Create a New Product</h1>
+    <form class="put-form" action="/store" method="post">
+        <label for="name">Name: <input type="text" name="name"  required></label> <br>
+        <label for="description"> Description:
+            <textarea rows="5" cols="16" name="description" placeholder="Enter details here..." required></textarea>
+        </label> <br>
+        <label for="img">Image Link: <input type="text" name="img" value="/static/no-image.png" required></label> <br>
+        <label for="price">Price: $<input type="number" name="price" required></label> <br>
+        <label for="qty">Quantity: <input type="text" name="qty" required></label> <br>
+        <input class="edit-new-btn" type="submit" value="Create">
     </form>
 </body>
 </html>
